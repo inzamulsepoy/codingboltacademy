@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Tutorials</title>
+  <link rel="stylesheet" href="/styles/html.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="/training.html">Home</a></li>
+      <li><a href="/html.html">HTML</a></li>
+      <li><a href="/css.html">CSS</a></li>
+      <li><a href="/js.html">JavaScript</a></li>
+      <li><a href="/mysql.html">MySQL</a></li>
+      <li><a href="/python-ide.html">IDE</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="hero">
+    <h1>Python Tutorials</h1>
+    <p>"Learn Python from basics to advanced level"</p>
+  </header>
+
+  <!-- ================== Python ================== -->
+  <section class="topic" id="python">
+    <h1>Python</h1>
+    <p>
+      Python is a versatile, high-level programming language used for web development, data science, automation, and more.
+    </p>
+
+    <!-- Hello World -->
+    <div class="tutorial" id="hello-world">
+      <h2>Hello World</h2>
+      <div class="code-box">
+        <pre><code>print("Hello, World!")</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Variables and Data Types -->
+    <div class="tutorial" id="variables">
+      <h2>Variables and Data Types</h2>
+      <div class="code-box">
+        <pre><code>x = 10          # Integer
+y = 3.14        # Float
+name = "Alice"  # String
+is_active = True # Boolean
+nums = [1,2,3]  # List
+person = {"name":"Bob","age":25} # Dictionary</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Operators -->
+    <div class="tutorial" id="operators">
+      <h2>Operators</h2>
+      <div class="code-box">
+        <pre><code>a, b = 10, 5
+print(a + b) # 15
+print(a - b) # 5
+print(a * b) # 50
+print(a / b) # 2.0
+print(a % b) # 0
+print(a > b) # True</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Conditional Statements -->
+    <div class="tutorial" id="conditions">
+      <h2>Conditional Statements</h2>
+      <div class="code-box">
+        <pre><code>age = 18
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Loops -->
+    <div class="tutorial" id="loops">
+      <h2>Loops</h2>
+      <div class="code-box">
+        <pre><code># For loop
+for i in range(5):
+    print(i)
+
+# While loop
+j = 0
+while j < 5:
+    print(j)
+    j += 1</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Functions -->
+    <div class="tutorial" id="functions">
+      <h2>Functions</h2>
+      <div class="code-box">
+        <pre><code>def greet(name):
+    return "Hello " + name
+
+print(greet("Alice"))
+
+# Lambda
+add = lambda x, y: x + y
+print(add(2,3))</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Lists -->
+    <div class="tutorial" id="lists">
+      <h2>Lists</h2>
+      <div class="code-box">
+        <pre><code>fruits = ["apple","banana","cherry"]
+fruits.append("orange")
+print(fruits[0])
+for f in fruits:
+    print(f)</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Dictionaries -->
+    <div class="tutorial" id="dictionaries">
+      <h2>Dictionaries</h2>
+      <div class="code-box">
+        <pre><code>person = {"name":"Alice","age":25}
+print(person["name"])
+person["age"] = 30
+for k,v in person.items():
+    print(k, v)</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Classes -->
+    <div class="tutorial" id="classes">
+      <h2>Classes & Objects</h2>
+      <div class="code-box">
+        <pre><code>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def greet(self):
+        print(f"Hello, I am {self.name}")
+
+p1 = Person("Alice", 25)
+p1.greet()</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- File Handling -->
+    <div class="tutorial" id="files">
+      <h2>File Handling</h2>
+      <div class="code-box">
+        <pre><code># Write
+with open("test.txt", "w") as f:
+    f.write("Hello File")
+
+# Read
+with open("test.txt", "r") as f:
+    print(f.read())</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Exception Handling -->
+    <div class="tutorial" id="exceptions">
+      <h2>Exception Handling</h2>
+      <div class="code-box">
+        <pre><code>try:
+    x = 10 / 0
+except ZeroDivisionError as e:
+    print("Error:", e)
+finally:
+    print("Done")</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Modules -->
+    <div class="tutorial" id="modules">
+      <h2>Modules</h2>
+      <div class="code-box">
+        <pre><code># math module
+import math
+print(math.sqrt(16))
+
+# custom module
+# utils.py
+def add(a,b): return a+b
+
+# main.py
+from utils import add
+print(add(2,3))</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Virtual Environment -->
+    <div class="tutorial" id="venv">
+      <h2>Virtual Environment</h2>
+      <div class="code-box">
+        <pre><code>python -m venv myenv
+source myenv/bin/activate   # Linux/Mac
+myenv\Scripts\activate      # Windows</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Packages (pip) -->
+    <div class="tutorial" id="pip">
+      <h2>Packages (pip)</h2>
+      <div class="code-box">
+        <pre><code>pip install requests
+pip list
+pip uninstall requests</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- OOP Advanced -->
+    <div class="tutorial" id="oop-advanced">
+      <h2>Inheritance & Polymorphism</h2>
+      <div class="code-box">
+        <pre><code>class Animal:
+    def speak(self):
+        print("Some sound")
+
+class Dog(Animal):
+    def speak(self):
+        print("Woof!")
+
+d = Dog()
+d.speak()</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Decorators -->
+    <div class="tutorial" id="decorators">
+      <h2>Decorators</h2>
+      <div class="code-box">
+        <pre><code>def my_decorator(func):
+    def wrapper():
+        print("Before function")
+        func()
+        print("After function")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Generators -->
+    <div class="tutorial" id="generators">
+      <h2>Generators</h2>
+      <div class="code-box">
+        <pre><code>def counter():
+    for i in range(3):
+        yield i
+
+for val in counter():
+    print(val)</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Async IO -->
+    <div class="tutorial" id="asyncio">
+      <h2>Async IO</h2>
+      <div class="code-box">
+        <pre><code>import asyncio
+
+async def hello():
+    print("Hello")
+    await asyncio.sleep(1)
+    print("World")
+
+asyncio.run(hello())</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="/scripts/html.js"></script>
+</body>
+</html>

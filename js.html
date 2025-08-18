@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Tutorials</title>
+  <link rel="stylesheet" href="/styles/html.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="/tutorial.html">Home</a></li>
+      <li><a href="/html.html">HTML</a></li>
+      <li><a href="/css.html">CSS</a></li>
+     
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="hero">
+    <h1>JavaScript Tutorials</h1>
+    <p>"Make your web pages interactive and dynamic"</p>
+  </header>
+
+  <!-- ================== JavaScript ================== -->
+  <section class="topic" id="javascript">
+    <h1>JavaScript (JS)</h1>
+    <p>
+      JavaScript adds interactivity and dynamic behavior to web pages.
+      It can manipulate the DOM, handle events, fetch data, and power entire web apps.
+    </p>
+
+    <!-- Hello World -->
+    <div class="tutorial" id="hello-world">
+      <h2>Hello World</h2>
+      <div class="code-box">
+        <pre><code>console.log("Hello, World!");</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Variables -->
+    <div class="tutorial" id="variables">
+      <h2>Variables</h2>
+      <div class="code-box">
+        <pre><code>let name = "Alice";
+const age = 25;
+var city = "New York";</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Data Types -->
+    <div class="tutorial" id="data-types">
+      <h2>Data Types</h2>
+      <div class="code-box">
+        <pre><code>let str = "Hello";     // String
+let num = 42;          // Number
+let bool = true;       // Boolean
+let arr = [1,2,3];     // Array
+let obj = {a:1, b:2};  // Object
+let n = null;          // Null
+let u;                 // Undefined</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Operators -->
+    <div class="tutorial" id="operators">
+      <h2>Operators</h2>
+      <div class="code-box">
+        <pre><code>let a = 10, b = 5;
+console.log(a + b); // 15
+console.log(a - b); // 5
+console.log(a * b); // 50
+console.log(a / b); // 2
+console.log(a % b); // 0
+console.log(a > b); // true
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Functions -->
+    <div class="tutorial" id="functions">
+      <h2>Functions</h2>
+      <div class="code-box">
+        <pre><code>function greet(name) {
+  return "Hello " + name;
+}
+console.log(greet("Alice"));
+
+// Arrow function
+const add = (x, y) => x + y;</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Conditions -->
+    <div class="tutorial" id="conditions">
+      <h2>Conditions</h2>
+      <div class="code-box">
+        <pre><code>let age = 18;
+if(age >= 18){
+  console.log("Adult");
+}else{
+  console.log("Minor");
+}</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Loops -->
+    <div class="tutorial" id="loops">
+      <h2>Loops</h2>
+      <div class="code-box">
+        <pre><code>// For loop
+for(let i=0; i&lt;5; i++){
+  console.log(i);
+}
+
+// While loop
+let j=0;
+while(j&lt;5){
+  console.log(j);
+  j++;
+}</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Arrays -->
+    <div class="tutorial" id="arrays">
+      <h2>Arrays</h2>
+      <div class="code-box">
+        <pre><code>let fruits = ["Apple","Banana","Mango"];
+fruits.push("Orange");
+console.log(fruits[0]); // Apple
+fruits.forEach(f => console.log(f));</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Objects -->
+    <div class="tutorial" id="objects">
+      <h2>Objects</h2>
+      <div class="code-box">
+        <pre><code>let person = {
+  name: "Alice",
+  age: 25,
+  greet: function(){
+    console.log("Hello " + this.name);
+  }
+};
+person.greet();</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- DOM Manipulation -->
+    <div class="tutorial" id="dom">
+      <h2>DOM Manipulation</h2>
+      <div class="code-box">
+        <pre><code>document.getElementById("demo").innerText = "Changed!";
+document.querySelector(".box").style.color = "red";</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Events -->
+    <div class="tutorial" id="events">
+      <h2>Events</h2>
+      <div class="code-box">
+        <pre><code>&lt;button onclick="sayHello()"&gt;Click&lt;/button&gt;
+
+&lt;script&gt;
+function sayHello(){
+  alert("Hello!");
+}
+&lt;/script&gt;</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- ES6 Features -->
+    <div class="tutorial" id="es6">
+      <h2>ES6 Features</h2>
+      <div class="code-box">
+        <pre><code>// Template literals
+let name = "Alice";
+console.log(`Hello, ${name}`);
+
+// Destructuring
+let [a,b] = [1,2];
+
+// Spread operator
+let arr = [1,2,3];
+let arr2 = [...arr, 4,5];</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Fetch API -->
+    <div class="tutorial" id="fetch">
+      <h2>Fetch API</h2>
+      <div class="code-box">
+        <pre><code>fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(res => res.json())
+  .then(data => console.log(data));</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Async/Await -->
+    <div class="tutorial" id="async-await">
+      <h2>Async / Await</h2>
+      <div class="code-box">
+        <pre><code>async function getData(){
+  let res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+  let data = await res.json();
+  console.log(data);
+}
+getData();</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Classes -->
+    <div class="tutorial" id="classes">
+      <h2>Classes</h2>
+      <div class="code-box">
+        <pre><code>class Person {
+  constructor(name, age){
+    this.name = name;
+    this.age = age;
+  }
+  greet(){
+    console.log(`Hello, I am ${this.name}`);
+  }
+}
+let p1 = new Person("Alice", 25);
+p1.greet();</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Modules -->
+    <div class="tutorial" id="modules">
+      <h2>Modules</h2>
+      <div class="code-box">
+        <pre><code>// math.js
+export function add(a,b){ return a+b; }
+
+// main.js
+import { add } from "./math.js";
+console.log(add(2,3));</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="/scripts/html.js"></script>
+</body>
+</html>

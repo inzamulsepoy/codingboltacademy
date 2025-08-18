@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* General Styles */
+body {
+  
+  font-family: Arial, sans-serif;
+  background-color: #0b0b0f;
+  color: white;
+  margin: 0;
+  padding-top: 60px; /* Adjust based on navbar height */
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #14080b;
+  border-bottom: 2px solid #b0122e;
+  padding: 10px 0;
+  z-index: 1000; /* stays above content */
+}
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  
+}
+
+.nav-logo {
+  font-family: "Courier Prime", monospace;
+  color: #ffffff;
+  font-size: 25px;
+  
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #e61111;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    
+    position: absolute;
+    top: 60px;
+    right: -100%;
+    background: #14080b;
+    flex-direction: column;
+    width: 200px;
+    border-left: 2px solid #dd0e0e;
+    padding: 15px;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
+
+
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #fdfdfd;
+  margin-bottom: 15px;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: transparent;
+  border: 2px solid #d60b0b;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #690707;
+}
+
+/* Card Container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Card Styles */
+.card {
+  background: #14080b; /* dark with red tint */
+  border: 1px solid #db0d0d;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(176, 18, 46, 0.3);
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(176, 18, 46, 0.5);
+}
+
+.card h3 {
+  color: #e70a0a;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Buttons Container */
+.card-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Enroll Now Button */
+.enroll-btn {
+  background: #db0808;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.enroll-btn:hover {
+  background: #660303;
+  transform: scale(1.05);
+}
+
+/* Learn More Button */
+.learn-btn {
+  background: transparent;
+  color: #dd0a0a;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 2px solid #e20909;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.learn-btn:hover {
+  background: #770303;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Course Section Specific */
+.course-section {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.course-card {
+  background: #14080b;
+  width: 300px;
+  border-radius: 10px;
+  border: solid #e90b0b 0.2px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(176, 18, 46, 0.3);
+  transition: transform 0.2s ease-in-out;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.course-content {
+  padding: 15px;
+}
+
+.course-content h2 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+.course-content p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.price-duration {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #f11313;
+}
+
+.duration {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Card Buttons Container */
+.card-buttons {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Learn More Button */
+.learn-btn {
+  background: transparent;
+  color: #eb0c0c;
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: 2px solid #6e0707;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.learn-btn:hover {
+  background: #e9091c;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Enroll Now Button */
+.enroll-btn {
+  background: #800303;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.enroll-btn:hover {
+  background: #ff002b;
+  transform: scale(1.05);
+}
+
+/* Card Images */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* keeps proportions, fills space */
+  border-radius: 10px;
+  
+  box-shadow: 0 4px 8px rgba(176, 18, 46, 0.3); /* red-tinted shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(176, 18, 46, 0.5);
+}
+
+/* ------------price----------------- */
+.price-duration {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.price {
+  color: #ff0000;
+  font-size: 16px;
+}
+
+.duration {
+  color: #666;
+  font-size: 14px;
+}

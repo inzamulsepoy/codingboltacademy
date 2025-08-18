@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Tutorials</title>
+  <link rel="stylesheet" href="/styles/html.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="/tutorial.html">Home</a></li>
+      <li><a href="/css.html">HTML</a></li>
+      <li><a href="/js.html">JavaScript</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="hero">
+    <h1>HTML Tutorials</h1>
+    <p>"Master the building blocks of the web"</p>
+  </header>
+
+  <!-- ================== HTML ================== -->
+  <section class="topic" id="html">
+    <h1>HTML (HyperText Markup Language)</h1>
+    <p>
+      HTML is the backbone of any web page. It structures content using elements 
+      such as headings, paragraphs, forms, and tables.
+    </p>
+
+    <!-- Boilerplate -->
+    <div class="tutorial" id="boilerplate">
+      <h2>Boilerplate</h2>
+      <div class="code-box">
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Body --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Headings -->
+    <div class="tutorial" id="headings">
+      <h2>Headings</h2>
+      <p>HTML supports 6 levels of headings: <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>.</p>
+      <div class="code-box">
+        <pre><code>&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Paragraphs & Text Formatting -->
+    <div class="tutorial" id="paragraphs">
+      <h2>Paragraphs & Text Formatting</h2>
+      <div class="code-box">
+        <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;strong&gt;Bold Text&lt;/strong&gt;
+&lt;em&gt;Italic Text&lt;/em&gt;
+&lt;u&gt;Underlined Text&lt;/u&gt;
+&lt;br&gt; (Line Break)
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Links -->
+    <div class="tutorial" id="links">
+      <h2>Links</h2>
+      <p>Use <code>&lt;a&gt;</code> tags to link to other pages.</p>
+      <div class="code-box">
+        <pre><code>&lt;a href="https://www.google.com" target="_blank"&gt;Visit Google&lt;/a&gt;
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Images -->
+    <div class="tutorial" id="images">
+      <h2>Images</h2>
+      <p>Use <code>&lt;img&gt;</code> to display images.</p>
+      <div class="code-box">
+        <pre><code>&lt;img src="image.jpg" alt="Description" width="300"&gt;
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Lists -->
+    <div class="tutorial" id="lists">
+      <h2>Lists</h2>
+      <p>HTML supports ordered and unordered lists.</p>
+      <div class="code-box">
+        <pre><code>&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First&lt;/li&gt;
+  &lt;li&gt;Second&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Forms -->
+    <div class="tutorial" id="forms">
+      <h2>Forms</h2>
+      <p>Forms allow users to input data into fields.</p>
+      <div class="code-box">
+        <pre><code>&lt;form&gt;
+  &lt;label&gt;Name: &lt;/label&gt;
+  &lt;input type="text" name="name"&gt;&lt;br&gt;
+  &lt;label&gt;Email: &lt;/label&gt;
+  &lt;input type="email" name="email"&gt;&lt;br&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Tables -->
+    <div class="tutorial" id="tables">
+      <h2>Tables</h2>
+      <p>Tables are used to display structured data.</p>
+      <div class="code-box">
+        <pre><code>&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alice&lt;/td&gt;
+    &lt;td&gt;24&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Semantic Elements -->
+    <div class="tutorial" id="semantic">
+      <h2>Semantic Elements</h2>
+      <p>Semantic HTML gives meaning to content.</p>
+      <div class="code-box">
+        <pre><code>&lt;header&gt;Header Content&lt;/header&gt;
+&lt;nav&gt;Navigation Links&lt;/nav&gt;
+&lt;main&gt;Main Content&lt;/main&gt;
+&lt;footer&gt;Footer Content&lt;/footer&gt;
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Multimedia -->
+    <div class="tutorial" id="multimedia">
+      <h2>Audio & Video</h2>
+      <div class="code-box">
+        <pre><code>&lt;audio controls&gt;
+  &lt;source src="song.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;video width="320" height="240" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Forms Advanced -->
+    <div class="tutorial" id="forms-advanced">
+      <h2>Advanced Form Elements</h2>
+      <div class="code-box">
+        <pre><code>&lt;form&gt;
+  &lt;input type="date"&gt;
+  &lt;input type="color"&gt;
+  &lt;input type="range" min="0" max="100"&gt;
+  &lt;input type="file"&gt;
+  &lt;input type="checkbox"&gt; Accept Terms
+&lt;/form&gt;
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Iframe -->
+    <div class="tutorial" id="iframe">
+      <h2>Iframe</h2>
+      <p>Embed another webpage inside your page.</p>
+      <div class="code-box">
+        <pre><code>&lt;iframe src="https://example.com" width="600" height="400"&gt;&lt;/iframe&gt;
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Advanced HTML5 APIs -->
+    <div class="tutorial" id="html5-apis">
+      <h2>HTML5 APIs (Geolocation, Storage)</h2>
+      <div class="code-box">
+        <pre><code>&lt;script&gt;
+// Local Storage
+localStorage.setItem("username", "Alice");
+alert(localStorage.getItem("username"));
+
+// Geolocation
+navigator.geolocation.getCurrentPosition(function(pos) {
+  console.log(pos.coords.latitude, pos.coords.longitude);
+});
+&lt;/script&gt;
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="/scripts/html.js"></script>
+</body>
+</html>

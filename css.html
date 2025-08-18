@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Tutorials</title>
+  <link rel="stylesheet" href="/styles/html.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="/tutorial.html">Home</a></li>
+      <li><a href="html.html">HTML</a></li>
+      <li><a href="js.html">JavaScript</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="hero">
+    <h1>CSS Tutorials</h1>
+    <p>"Style your web pages with CSS"</p>
+  </header>
+
+  <!-- ================== CSS ================== -->
+  <section class="topic" id="css">
+    <h1>CSS (Cascading Style Sheets)</h1>
+    <p>
+      CSS is used to style and design HTML elements. It controls layout, colors,
+      fonts, and responsiveness.
+    </p>
+
+    <!-- Basic Example -->
+    <div class="tutorial" id="basic-css">
+      <h2>Basic CSS Example</h2>
+      <div class="code-box">
+        <pre><code>body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: crimson;
+  text-align: center;
+}
+
+button {
+  background: crimson;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+}
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Selectors -->
+    <div class="tutorial" id="selectors">
+      <h2>Selectors</h2>
+      <div class="code-box">
+        <pre><code>/* Element Selector */
+p { color: blue; }
+
+/* Class Selector */
+.myClass { font-size: 18px; }
+
+/* ID Selector */
+#unique { background: yellow; }
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Colors -->
+    <div class="tutorial" id="colors">
+      <h2>Colors</h2>
+      <div class="code-box">
+        <pre><code>h1 { color: red; }
+p { color: rgb(0, 128, 0); }
+div { background-color: #333; }
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Box Model -->
+    <div class="tutorial" id="box-model">
+      <h2>Box Model</h2>
+      <div class="code-box">
+        <pre><code>div {
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid red;
+  width: 200px;
+  height: 100px;
+}
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Flexbox -->
+    <div class="tutorial" id="flexbox">
+      <h2>Flexbox</h2>
+      <div class="code-box">
+        <pre><code>.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="tutorial" id="grid">
+      <h2>Grid Layout</h2>
+      <div class="code-box">
+        <pre><code>.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Transitions -->
+    <div class="tutorial" id="transitions">
+      <h2>Transitions</h2>
+      <div class="code-box">
+        <pre><code>button {
+  background: crimson;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: darkred;
+}
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Animations -->
+    <div class="tutorial" id="animations">
+      <h2>Animations</h2>
+      <div class="code-box">
+        <pre><code>@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.box {
+  animation: fadeIn 2s ease-in-out;
+}
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Media Queries -->
+    <div class="tutorial" id="media-queries">
+      <h2>Media Queries</h2>
+      <div class="code-box">
+        <pre><code>@media (max-width: 768px) {
+  body { font-size: 14px; }
+  .container { flex-direction: column; }
+}
+</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="/scripts/html.js"></script>
+</body>
+</html>

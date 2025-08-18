@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Tutorials</title>
+  <link rel="stylesheet" href="/styles/html.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="/tutorial.html">Home</a></li>
+      <li><a href="/html.html">HTML</a></li>
+      <li><a href="/css.html">CSS</a></li>
+      <li><a href="/js.html">JavaScript</a></li>
+  
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="hero">
+    <h1>SQL Tutorials</h1>
+    <p>"Learn SQL from basics to advanced level"</p>
+  </header>
+
+  <!-- ================== MySQL ================== -->
+  <section class="topic" id="mysql">
+    <h1>MySQL (Structured Query Language)</h1>
+    <p>
+      MySQL is a relational database management system (RDBMS) that uses SQL to store, query, and manage data.
+    </p>
+
+    <!-- Create Database -->
+    <div class="tutorial" id="create-database">
+      <h2>Create Database</h2>
+      <div class="code-box">
+        <pre><code>CREATE DATABASE mydb;
+SHOW DATABASES;
+USE mydb;</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Create Table -->
+    <div class="tutorial" id="create-table">
+      <h2>Create Table</h2>
+      <div class="code-box">
+        <pre><code>CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(100) UNIQUE,
+  age INT
+);</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Insert Data -->
+    <div class="tutorial" id="insert">
+      <h2>Insert Data</h2>
+      <div class="code-box">
+        <pre><code>INSERT INTO users (name, email, age)
+VALUES ("Alice", "alice@example.com", 25),
+       ("Bob", "bob@example.com", 30);</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Select Data -->
+    <div class="tutorial" id="select">
+      <h2>Select Data</h2>
+      <div class="code-box">
+        <pre><code>SELECT * FROM users;
+SELECT name, age FROM users;
+SELECT * FROM users WHERE age &gt; 25;
+SELECT * FROM users ORDER BY age DESC;
+SELECT COUNT(*) FROM users;</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Update & Delete -->
+    <div class="tutorial" id="update-delete">
+      <h2>Update & Delete</h2>
+      <div class="code-box">
+        <pre><code>UPDATE users SET age = 26 WHERE name = "Alice";
+DELETE FROM users WHERE id = 2;</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Joins -->
+    <div class="tutorial" id="joins">
+      <h2>Joins</h2>
+      <div class="code-box">
+        <pre><code>-- INNER JOIN
+SELECT orders.id, users.name
+FROM orders
+INNER JOIN users ON orders.user_id = users.id;
+
+-- LEFT JOIN
+SELECT users.name, orders.id
+FROM users
+LEFT JOIN orders ON users.id = orders.user_id;</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Constraints -->
+    <div class="tutorial" id="constraints">
+      <h2>Constraints</h2>
+      <div class="code-box">
+        <pre><code>CREATE TABLE employees (
+  id INT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  email VARCHAR(100) UNIQUE,
+  salary DECIMAL(10,2) CHECK (salary &gt; 0)
+);</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Indexes -->
+    <div class="tutorial" id="indexes">
+      <h2>Indexes</h2>
+      <div class="code-box">
+        <pre><code>CREATE INDEX idx_name ON users(name);
+SHOW INDEXES FROM users;</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Aggregate Functions -->
+    <div class="tutorial" id="aggregate">
+      <h2>Aggregate Functions</h2>
+      <div class="code-box">
+        <pre><code>SELECT COUNT(*) FROM users;
+SELECT AVG(age) FROM users;
+SELECT MIN(age), MAX(age) FROM users;
+SELECT age, COUNT(*) FROM users GROUP BY age;</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Subqueries -->
+    <div class="tutorial" id="subqueries">
+      <h2>Subqueries</h2>
+      <div class="code-box">
+        <pre><code>SELECT name FROM users
+WHERE age &gt; (SELECT AVG(age) FROM users);</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Views -->
+    <div class="tutorial" id="views">
+      <h2>Views</h2>
+      <div class="code-box">
+        <pre><code>CREATE VIEW adult_users AS
+SELECT * FROM users WHERE age &gt;= 18;
+
+SELECT * FROM adult_users;</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Stored Procedures -->
+    <div class="tutorial" id="stored-procedures">
+      <h2>Stored Procedures</h2>
+      <div class="code-box">
+        <pre><code>DELIMITER //
+CREATE PROCEDURE GetUsers()
+BEGIN
+  SELECT * FROM users;
+END //
+DELIMITER ;
+
+CALL GetUsers();</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Triggers -->
+    <div class="tutorial" id="triggers">
+      <h2>Triggers</h2>
+      <div class="code-box">
+        <pre><code>CREATE TRIGGER before_insert_users
+BEFORE INSERT ON users
+FOR EACH ROW
+SET NEW.name = UPPER(NEW.name);</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- Transactions -->
+    <div class="tutorial" id="transactions">
+      <h2>Transactions</h2>
+      <div class="code-box">
+        <pre><code>START TRANSACTION;
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+COMMIT; -- or ROLLBACK;</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+    <!-- User Management -->
+    <div class="tutorial" id="users">
+      <h2>User Management</h2>
+      <div class="code-box">
+        <pre><code>CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON mydb.* TO 'newuser'@'localhost';
+FLUSH PRIVILEGES;</code></pre>
+        <button class="copy-btn">Copy</button>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="/scripts/html.js"></script>
+</body>
+</html>

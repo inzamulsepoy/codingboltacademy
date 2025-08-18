@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #000000;
+  color: #000000;
+}
+
+header {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #dc0e0e;
+  color: white;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  background: #f8f9fc;
+  padding: 15px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.accordion-header:hover {
+  background: #e8eef6;
+}
+
+.plus {
+  font-size: 1.4rem;
+  color: #f30e0e;
+  transition: transform 0.3s;
+}
+
+.accordion-header.active .plus {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background: white;
+  padding: 0 20px;
+  font-size: 0.95rem;
+  color: #555;
+  transition: max-height 0.4s ease-out, padding 0.3s ease-out;
+}
+
+.accordion-content.open {
+  padding: 15px 20px;
+}
+
+.enrol-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #df0c0c;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.enrol-btn:hover {
+  background-color: #8c0a0a;
+}
+
+.level-1{
+  list-style: none;
+  font-weight: bold;
+  margin-left: 0;
+}
+
+.modules{
+  font-size: 20px;
+  color: rgb(240, 7, 7);
+}
+
+
+img {
+ height: 100px;
+ /* border-radius: 20px; */
+ display: block;
+ margin: 0 auto;
+
+}
+
+.accordion-item img{
+  width: 100%;
+  
+  object-fit: cover; /* fill div & crop if needed */
+}

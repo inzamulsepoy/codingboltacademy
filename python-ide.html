@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Python IDE</title>
+  <link rel="icon" type="image/x-icon" href="images/CB logo 2.png"/>
+  <style>
+    :root{--bg:#0f1724;--panel:#0b1220;--accent:#06b6d4;--muted:#94a3b8;}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial}
+    body{background:linear-gradient(180deg,#071029 0%, #071833 100%);color:#e6eef8}
+    .app{display:grid;grid-template-columns:1fr 420px;grid-template-rows:48px 1fr;gap:12px;height:100vh;padding:12px}
+    header{grid-column:1/-1;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);display:flex;align-items:center;gap:12px;padding:8px 12px;border-radius:10px}
+    .brand{font-weight:700;letter-spacing:0.4px}
+    .controls{margin-left:auto;display:flex;gap:8px}
+    button{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--muted);cursor:pointer}
+    button.primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#021826;border:1px solid rgba(255,255,255,0.06)}
+    .editor{grid-column:1/2;grid-row:2/3;background:var(--panel);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+    #editor{flex:1;height:100%}
+    .right{grid-column:2/3;grid-row:2/3;display:flex;flex-direction:column;gap:12px}
+    .panel{background:var(--panel);border-radius:10px;padding:12px;min-height:120px;max-height:100%;overflow:auto}
+    .output{font-family:monospace;font-size:13px;white-space:pre-wrap;line-height:1.4;color:#e6eef8;}
+    .toolbar{display:flex;gap:8px;margin-bottom:8px}
+    .footer{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}
+    .split{display:flex;gap:8px}
+    input[type=file]{display:none}
+    @media (max-width:900px){.app{grid-template-columns:1fr;grid-template-rows:48px 1fr 320px}.right{grid-row:3/4}}
+    /* Add this or replace existing @media */
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    height: auto;
+  }
+
+  .controls {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .editor {
+    min-height: 300px;
+  }
+
+  .right {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .panel {
+    min-height: auto;
+  }
+
+  #editor {
+    min-height: 250px;
+  }
+
+  .toolbar {
+    flex-wrap: wrap;
+  }
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">Python IDE</div>
+      <div class="muted" style="color:var(--muted);margin-left:8px">(runs in the browser with Pyodide)</div>
+      <div class="controls">
+        <button id="load-sample">Load Sample</button>
+        <button id="download">Download</button>
+        <button class="primary" id="run">Run ▶</button>
+      </div>
+    </header>
+
+    <div class="editor panel">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+        <select id="mode" title="language mode" style="padding:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--muted)">
+          <option value="python">Python</option>
+        </select>
+        <div style="color:var(--muted);font-size:13px">Editor (Ace)</div>
+      </div>
+      <div id="editor"># Loading editor...</div>
+    </div>
+
+    <div class="right">
+      <div class="panel" style="display:flex;flex-direction:column;">
+        <div class="toolbar">
+          <button id="clear-output">Clear Output</button>
+          <button id="format">Format (autopep8)</button>
+          <label for="file-input" style="cursor:pointer"><button id="open-file">Open File</button></label>
+          <input id="file-input" type="file" accept=".py" />
+        </div>
+        <div style="flex:1;min-height:200px;max-height:60vh;overflow:auto;background:#020814;padding:12px;border-radius:8px;">
+          <div id="output" class="output">Console output will appear here...</div>
+        </div>
+      </div>
+
+      <div class="panel" style="display:flex;flex-direction:column;gap:8px">
+        <div style="font-weight:600">Tips</div>
+        <ul style="color:var(--muted);margin:0 0 0 18px">
+          <li>Use the Run button to execute Python in the browser (Pyodide).</li>
+          <li>You can open a .py file, edit, and download your code.</li>
+          <li>No server required — runs client-side (requires internet to load CDNs).</li>
+        </ul>
+        <div class="footer">Built for quick testing and learning. Want file explorer, debugger, or package install?</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Libraries: Ace + Pyodide -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.9.6/ace.js" integrity="" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+  <script>
+    // Basic UI wiring and Pyodide integration
+    const editorEl = document.getElementById('editor');
+    const outputEl = document.getElementById('output');
+    const runBtn = document.getElementById('run');
+    const loadSampleBtn = document.getElementById('load-sample');
+    const downloadBtn = document.getElementById('download');
+    const clearBtn = document.getElementById('clear-output');
+    const openFileBtn = document.getElementById('open-file');
+    const fileInput = document.getElementById('file-input');
+    const formatBtn = document.getElementById('format');
+
+    // init ace
+    const editor = ace.edit(editorEl, {theme: 'ace/theme/monokai', mode: 'ace/mode/python', fontSize: '14px'});
+    editor.setValue(`# Hello from Mini Python IDE\n\nprint('Hello, world!')\nfor i in range(3):\n    print('line', i+1)` , -1);
+
+    // pyodide setup
+    let pyodideReady = false;
+    let pyodide = null;
+
+    appendOutput('Loading Python runtime — this can take a few seconds...');
+    async function initPyodide(){
+      try{
+        pyodide = await loadPyodide({indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.23.4/full/'});
+        // provide a JS callback to python for stdout
+        pyodide.globals.set('__send_to_js__', (s) => { appendOutput(String(s)); });
+        pyodideReady = true;
+        appendOutput('\nPyodide ready. You can run Python code.');
+      }catch(e){
+        appendOutput('Failed to load Pyodide: ' + e);
+      }
+    }
+    initPyodide();
+
+    function appendOutput(text){
+      if (!text) return;
+      outputEl.textContent = outputEl.textContent.replace(/^Console output will appear here\.\.\./, '');
+      outputEl.textContent += text + '\n';
+      outputEl.scrollTop = outputEl.scrollHeight;
+    }
+
+    runBtn.addEventListener('click', async ()=>{
+      if (!pyodideReady){ appendOutput('Python runtime not ready yet.'); return; }
+      const code = editor.getValue();
+      appendOutput('--- Running code ---');
+      // Wrap the user code so stdout/stderr forward to JS
+      const wrapped = `import sys\nclass StdoutCatcher:\n    def write(self, s):\n        if s is not None and s != '':\n            __send_to_js__(s)\n    def flush(self):\n        pass\nsys.stdout = StdoutCatcher()\nsys.stderr = StdoutCatcher()\n` + code;
+      try{
+        await pyodide.runPythonAsync(wrapped);
+        appendOutput('--- Finished ---');
+      }catch(err){
+        appendOutput('Error: ' + err);
+      }
+    });
+
+    loadSampleBtn.addEventListener('click', ()=>{
+      const sample = `# Fibonacci example\ndef fib(n):\n    a,b=0,1\n    for _ in range(n):\n        a,b=b,a+b\n    return a\n\nfor i in range(10):\n    print(i, fib(i))`;
+      editor.setValue(sample, -1);
+    });
+
+    clearBtn.addEventListener('click', ()=>{ outputEl.textContent=''; });
+
+    downloadBtn.addEventListener('click', ()=>{
+      const blob = new Blob([editor.getValue()], {type:'text/x-python'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'script.py';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+
+    fileInput.addEventListener('change', (ev)=>{
+      const f = ev.target.files[0];
+      if (!f) return;
+      const reader = new FileReader();
+      reader.onload = (e)=> editor.setValue(e.target.result, -1);
+      reader.readAsText(f);
+    });
+
+    // Format using autopep8 (needs pyodide package). We'll try to load it lazily.
+    formatBtn.addEventListener('click', async ()=>{
+      if (!pyodideReady){ appendOutput('Pyodide not ready.'); return; }
+      appendOutput('Formatting code...');
+      try{
+        if (!pyodide.isPyProxy(pyodide.globals.get('__autopep8_loaded__') || null)){
+          // attempt to install autopep8 from micropip
+          await pyodide.loadPackage(['micropip']);
+          await pyodide.runPythonAsync("import micropip; await micropip.install('autopep8')");
+          pyodide.globals.set('__autopep8_loaded__', true);
+        }
+        const src = editor.getValue();
+        pyodide.globals.set('__src__', src);
+        const formatted = await pyodide.runPythonAsync("import autopep8; autopep8.fix_code(__src__)");
+        editor.setValue(formatted, -1);
+        appendOutput('Formatted.');
+      }catch(e){ appendOutput('Formatting failed: ' + e); }
+    });
+
+    // Helpful: allow Ctrl+Enter to run
+    editor.commands.addCommand({
+      name: 'run',
+      bindKey: {win: 'Ctrl-Enter', mac: 'Command-Enter'},
+      exec: ()=> runBtn.click()
+    });
+
+  </script>
+</body>
+</html>
