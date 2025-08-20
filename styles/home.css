@@ -32,7 +32,9 @@ body {
 }
 
 .nav-logo {
+
   font-family: "Courier Prime", monospace;
+
   color: #ffffff;
   font-size: 25px;
   
@@ -373,4 +375,102 @@ h1 {
 .duration {
   color: #666;
   font-size: 14px;
+}
+
+
+/* ------------------footer----------------------------- */
+
+
+.footer {
+  background-color: #0d0d0d; /* black */
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+  flex: 1 1 250px;
+  margin: 15px;
+}
+
+.footer h2, .footer h3 {
+  color: #b0122e; /* dark red */
+  margin-bottom: 15px;
+}
+
+.footer p, .footer a {
+  color: #ddd;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ff3b3b; /* brighter red on hover */
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #222;
+  margin-top: 20px;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* --------------------course marquee--------------------------- */
+
+
+.course-marquee {
+  width: 100%;
+  overflow: hidden;
+  font-family: "Courier Prime", monospace;
+  font-size: 45px;
+  color: white;
+  padding: 10px 0;
+  position: relative;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  
+}
+
+.course-track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: marquee 40s linear infinite; /* slower speed */
+}
+
+.course-track span {
+  display: inline-block;
+  margin: 0 50px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* only half since we duplicate */
 }
