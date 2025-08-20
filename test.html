@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion Example</title>
+  <style>
+    .collapsible {
+      cursor: pointer;
+      font-size: 18px;
+      border: none;
+      background: none;
+      outline: none;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      text-align: left;
+      padding: 10px;
+    }
+
+    .collapsible::before {
+      content: "+";
+      font-weight: bold;
+      margin-right: 8px;
+      transition: transform 0.2s;
+    }
+
+    .collapsible.active::before {
+      content: "−"; /* minus sign */
+    }
+
+    .content {
+      display: none;
+      margin-left: 24px;
+      padding: 5px 0;
+    }
+
+    .content.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="collapsible">Level 1: Python Programming</button>
+  <div class="content">
+    <ul>
+      <li>Variables</li>
+            <li>Operators</li>
+            <li>Input/Output</li>
+            <li>String</li>
+            <li>List</li>
+            <li>Tuple</li>
+            <li>Dictionary</li>
+            <li>Conditional Statements</li>
+            <li>Loops</li>
+            <li>Functions</li>
+            <li>Exceptions</li>
+            <li>File/Error Handling</li>
+            <li>Web Scraping</li>
+            <li>Scripting/Automation</li>
+    </ul>
+  </div>
+
+  <button class="collapsible">Vegetables</button>
+  <div class="content">
+    <ul>
+      <li>Carrot</li>
+      <li>Potato</li>
+      <li>Onion</li>
+    </ul>
+  </div>
+
+  <button class="collapsible">Drinks</button>
+  <div class="content">
+    <ul>
+      <li>Water</li>
+      <li>Juice</li>
+      <li>Coffee</li>
+    </ul>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll(".collapsible");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        // Close all sections
+        buttons.forEach(b => {
+          if (b !== btn) {
+            b.classList.remove("active");
+            b.nextElementSibling.classList.remove("show");
+          }
+        });
+
+        // Toggle the clicked one
+        btn.classList.toggle("active");
+        btn.nextElementSibling.classList.toggle("show");
+      });
+    });
+  </script>
+</body>
+</html>
