@@ -524,6 +524,7 @@ img:hover {
 
 /* Level-1 specific styling */
 .level-1 {
+
   list-style: none;
   font-weight: 700;
   font-size: 1rem;
@@ -533,7 +534,7 @@ img:hover {
   letter-spacing: 1px;
   text-shadow: 0 0 5px rgba(220, 20, 60, 0.3);
   position: relative;
-  padding-left: 0;
+  padding-left: 10px;
 }
 
 .level-1::before {
