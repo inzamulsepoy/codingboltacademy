@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <link rel="stylesheet" href="/styles/payment.css">
+</head>
+<body>
+
+  <div class="payment-container">
+    <h1>Secure Payment</h1>
+    <p>Scan the QR code or copy the UPI ID to complete your payment.</p>
+
+    <!-- QR Code -->
+    <a href="/images/phonepeqr.jpeg" target="_blank">
+      <img src="/images/phonepeqr.jpeg" alt="QR Code" class="qr-code">
+    </a>
+
+    <!-- UPI Section -->
+    <div class="upi-section">
+      <span id="upi-id">7838103871-2@axl</span>
+      <button id="copy-btn">Copy UPI</button>
+    </div>
+
+    <!-- success animation -->
+<div id="copy-popup" class="copy-popup">
+  ✅ UPI ID Copied!
+</div>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">Go Back</a>
+  </div>
+
+  <script src="/scripts/payment.js"></script>
+</body>
+</html>
