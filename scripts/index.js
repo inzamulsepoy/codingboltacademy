@@ -33,3 +33,44 @@ const navLinks = document.getElementById("nav-links");
 hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
+
+
+
+
+// whatsapp
+document.addEventListener("DOMContentLoaded", function () {
+    const waWidget = document.querySelector(".wa-widget");
+    const waClose = document.querySelector(".wa-close");
+  
+    // Track if widget was closed in this session
+    let closed = false;
+  
+    function handleScroll() {
+      // Only show if user scrolled > 300px AND has not closed it
+      if (window.scrollY > 10 && !closed) {
+        waWidget.classList.add("wa-show");
+      } else {
+        waWidget.classList.remove("wa-show");
+      }
+    }
+  
+    // Scroll listener
+    window.addEventListener("scroll", handleScroll);
+  
+    // Close button hides widget until page reload
+    waClose.addEventListener("click", () => {
+      closed = true;
+      waWidget.classList.remove("wa-show");
+    });
+  });
+  
+  // Show tab after 300px scroll with slide animation
+  window.addEventListener("scroll", () => {
+    const tab = document.getElementById("quote-tab");
+    if (window.scrollY > 10) {
+      tab.classList.add("show");
+    } else {
+      tab.classList.remove("show");
+    }
+  });
+  
