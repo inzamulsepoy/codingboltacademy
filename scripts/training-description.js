@@ -375,3 +375,26 @@ rippleCSS.textContent = `
   }
 `;
 document.head.appendChild(rippleCSS);
+
+
+
+// --------------------------------------------------
+// Auto-open based on URL hash (#id)
+document.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash;
+  if (hash) {
+    const targetItem = document.querySelector(hash);
+    if (targetItem) {
+      const header = targetItem.querySelector(".accordion-header");
+      const content = header.nextElementSibling;
+
+      // Open the accordion smoothly
+      openAccordionSmooth(header, content);
+
+      // Scroll into view
+      setTimeout(() => {
+        targetItem.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 400);
+    }
+  }
+});
