@@ -550,7 +550,14 @@ h1 {
   margin: 15px;
 }
 
-.footer h2, .footer h3 {
+.footer h2{
+  font-family: "Courier Prime", monospace;
+  color: #ffffff; /* dark red */
+  margin-bottom: 15px;
+}
+
+.footer h3 {
+  font-family: "Courier Prime", monospace;
   color: #ec1212; /* dark red */
   margin-bottom: 15px;
 }
