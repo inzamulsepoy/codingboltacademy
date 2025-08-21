@@ -72,7 +72,13 @@ body {
   background: white;
   border-radius: 2px;
   transition: all 0.3s ease;
+
+
 }
+
+
+
+
 
 /* Mobile Styles */
 @media (max-width: 768px) {
@@ -554,6 +560,7 @@ h1 {
   font-family: "Courier Prime", monospace;
   color: #ffffff; /* dark red */
   margin-bottom: 15px;
+  
 }
 
 .footer h3 {
