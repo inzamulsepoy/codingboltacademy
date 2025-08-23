@@ -26,7 +26,7 @@ body{
 }
 
 /* Layout helpers */
-.container{width:min(1200px,92%); margin-inline:auto}
+.container{width:min(1200px,92%); margin-inline:auto; padding: 20px 10px;}
 .section{padding:64px 0}
 .center{text-align:center}
 .row{display:flex; align-items:center; gap:18px}
