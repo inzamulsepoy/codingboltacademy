@@ -20,6 +20,7 @@ body {
   border-bottom: 1px solid #770505;
   padding: 10px 0;
   z-index: 1000; /* stays above content */
+  box-shadow: 0 4px 15px rgba(176, 18, 46, 0.3);
 }
 .nav-container {
   max-width: 1200px;
@@ -161,7 +162,7 @@ h1 {
 /* Card Styles */
 .card {
   background: #14080b; /* dark with red tint */
-  border: 1px solid #db0d0d;
+  border: 1px solid #be0909;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 15px rgba(176, 18, 46, 0.3);
@@ -304,6 +305,7 @@ h1 {
 @media (max-width: 600px) {
   .card-container {
     grid-template-columns: 1fr;
+    max-width: 300px;
   }
 }
 
