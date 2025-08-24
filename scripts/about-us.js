@@ -24,26 +24,38 @@ const io = new IntersectionObserver(entries => {
   });
 },{threshold:0.15});
 revealEls.forEach(el => io.observe(el));
-
 // Animated counters
-function animateCounter(el){
+function animateCounter(el) {
   const target = Number(el.dataset.target || el.getAttribute('data-target') || 0);
   const numEl = el.querySelector('.num');
-  if(!numEl) return;
-  let start = 0;
+  if (!numEl) return;
+
   const duration = 1200; // ms
   const startTime = performance.now();
 
-  function tick(now){
-    const p = Math.min((now - startTime)/duration, 1);
+  function tick(now) {
+    const p = Math.min((now - startTime) / duration, 1);
     const value = Math.floor(p * target);
     numEl.textContent = value.toLocaleString();
-    if(p < 1) requestAnimationFrame(tick);
+    if (p < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
 }
 
-document.querySelectorAll('[data-counter]').forEach(animateCounter);
+// Setup intersection observer
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);  // run animation
+      observer.unobserve(entry.target); // stop observing after run
+    }
+  });
+}, { threshold: 0.5 }); // triggers when 50% visible
+
+// Attach observer to all counters
+document.querySelectorAll('[data-counter]').forEach(el => {
+  observer.observe(el);
+});
 
 // Accordion
 document.querySelectorAll('.a-item').forEach(item => {
