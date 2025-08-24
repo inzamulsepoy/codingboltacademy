@@ -10,14 +10,14 @@ body {
   padding-top: 60px; /* Adjust based on navbar height */
 }
 
-/* Navbar Styles */
+/* -------------------------Navbar-------------------------- */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: #14080b;
-  border-bottom: 2px solid #b0122e;
+  border-bottom: 1px solid #770505;
   padding: 10px 0;
   z-index: 1000; /* stays above content */
 }
@@ -27,7 +27,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 25px;
   
 }
 
@@ -36,7 +36,7 @@ body {
   font-family: "Courier Prime", monospace;
 
   color: #ffffff;
-  font-size: 25px;
+  font-size: 20px;
   
   text-decoration: none;
 }
@@ -114,6 +114,7 @@ body {
 header {
   text-align: center;
   padding: 20px;
+ 
 }
 
 h1 {
@@ -121,12 +122,15 @@ h1 {
   margin-bottom: 15px;
 }
 
+
+
 /* Filter Buttons */
 .filter-buttons {
   display: flex;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
 .filter-btn {
@@ -148,9 +152,9 @@ h1 {
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 29px;
   padding: 20px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
 }
 
