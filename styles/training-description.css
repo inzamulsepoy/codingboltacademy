@@ -103,7 +103,7 @@ header p {
 }
 
 .accordion {
-  max-width: 900px;
+  max-width: 700px;
   margin: 50px auto;
   background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
   border-radius: 20px;
@@ -614,4 +614,5 @@ img:hover {
   padding-top: 15px;
   font-size: 13px;
   color: #aaa;
+  padding-bottom: 15px;
 }
