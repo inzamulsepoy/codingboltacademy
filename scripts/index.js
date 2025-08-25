@@ -37,6 +37,7 @@ hamburger.addEventListener("click", () => {
 
 
 
+
 // whatsapp
 document.addEventListener("DOMContentLoaded", function () {
     const waWidget = document.querySelector(".wa-widget");
