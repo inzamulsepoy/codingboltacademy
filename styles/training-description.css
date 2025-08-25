@@ -604,3 +604,14 @@ img:hover {
     transform: translateY(0);
   }
 }
+
+
+/* ----------------------footer-------------------- */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #222;
+  margin-top: 20px;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #aaa;
+}
