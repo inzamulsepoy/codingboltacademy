@@ -404,34 +404,36 @@ h1 {
   font-size: 14px;
 }
 
-
-/* Mobile course cards slider with peek effect */
 @media (max-width: 600px) {
   .card-container {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    gap: 14px;                         /* space between cards */
-    padding: 12px;
-    scroll-snap-type: x mandatory;     /* snapping */
-    scroll-padding-left: 1px;
+    gap: 14px;                        /* gap only between cards */
+    padding: 20;
+    margin: 20;
+    width: 100vw;
+    scroll-snap-type: x mandatory;
     justify-content: flex-start;
   }
 
   .card {
-    flex: 0 0 80%;                     /* each card ~80% of screen */
+    flex: 0 0 80%;
     max-width: 80%;
     min-width: 240px;
-    scroll-snap-align: start;          /* snap nicely */
+    scroll-snap-align: start;
   }
 
-  /* Hide scroll bar for clean look */
+  /* remove extra space on the right edge */
+  .card:last-child {
+    margin-right: 0;
+  }
+
   .card-container::-webkit-scrollbar {
     display: none;
   }
 }
-
 
 
 /* -----------------------whatsapp------------------------ */
