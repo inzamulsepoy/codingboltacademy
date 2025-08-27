@@ -404,29 +404,31 @@ h1 {
   font-size: 14px;
 }
 
-/* Mobile course cards slider */
+
+/* Mobile course cards slider with peek effect */
 @media (max-width: 600px) {
   .card-container {
-    display: flex;                  /* turn into horizontal flex */
-    flex-wrap: nowrap;              /* no wrapping */
-    overflow-x: auto;               /* enable horizontal scroll */
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    gap: 16px;
+    gap: 14px;                         /* space between cards */
     padding: 12px;
-    scroll-snap-type: x mandatory;  /* snap scrolling */
-    scroll-padding-left: 12px;
+    scroll-snap-type: x mandatory;     /* snapping */
+    scroll-padding-left: 1px;
     justify-content: flex-start;
   }
 
   .card {
-    flex: 0 0 85%;                  /* each card ~85% of screen */
-    max-width: 85%;
+    flex: 0 0 80%;                     /* each card ~80% of screen */
+    max-width: 80%;
     min-width: 240px;
-    scroll-snap-align: start;       /* snap start of each card */
+    scroll-snap-align: start;          /* snap nicely */
   }
 
+  /* Hide scroll bar for clean look */
   .card-container::-webkit-scrollbar {
-    display: none;                  /* hide scrollbar for clean look */
+    display: none;
   }
 }
 
