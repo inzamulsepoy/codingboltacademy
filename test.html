@@ -1,103 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accordion Example</title>
-  <style>
-    .collapsible {
-      cursor: pointer;
-      font-size: 18px;
-      border: none;
-      background: none;
-      outline: none;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      text-align: left;
-      padding: 10px;
-    }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* ---------- Desktop / Default ---------- */
+.course-section {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
 
-    .collapsible::before {
-      content: "+";
-      font-weight: bold;
-      margin-right: 8px;
-      transition: transform 0.2s;
-    }
+.course-card {
+  background: #14080b;
+  width: 300px;               /* desktop default */
+  border-radius: 10px;
+  border: solid #e90b0b 0.2px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(176, 18, 46, 0.3);
+  transition: transform 0.2s ease-in-out;
+}
 
-    .collapsible.active::before {
-      content: "−"; /* minus sign */
-    }
+/* ---------- Mobile: horizontal slider (only when width <=600px) ---------- */
+@media (max-width: 600px) {
+  .course-section {
+    display: flex;
+    flex-wrap: nowrap;               /* prevent wrapping -> horizontal list */
+    overflow-x: auto;                /* enable horizontal scroll */
+    -webkit-overflow-scrolling: touch;/* smooth scrolling on iOS */
+    gap: 16px;
+    padding: 12px;                   /* left/right spacing */
+    scroll-snap-type: x mandatory;   /* enable snapping */
+    scroll-padding-left: 12px;       /* space for first card */
+    justify-content: flex-start;     /* align from left so scrolling works naturally */
+    scroll-behavior: smooth;
+  }
 
-    .content {
-      display: none;
-      margin-left: 24px;
-      padding: 5px 0;
-    }
+  .course-card {
+    flex: 0 0 85%;        /* card takes ~85% of viewport width */
+    width: 85%;           /* override fixed 300px if present earlier */
+    max-width: 85%;
+    min-width: 220px;     /* prevents cards from getting too small on tiny screens */
+    scroll-snap-align: center; /* card centers when snapped (use 'start' if you prefer) */
+    border-radius: 12px;
+  }
 
-    .content.show {
-      display: block;
-    }
-  </style>
+  /* Optional — hide native scrollbar for cleaner UI (works on WebKit) */
+  .course-section::-webkit-scrollbar { height: 8px; }
+  .course-section::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 4px; }
+}
+</style>
 </head>
 <body>
 
-  <button class="collapsible">Level 1: Python Programming</button>
-  <div class="content">
-    <ul>
-      <li>Variables</li>
-            <li>Operators</li>
-            <li>Input/Output</li>
-            <li>String</li>
-            <li>List</li>
-            <li>Tuple</li>
-            <li>Dictionary</li>
-            <li>Conditional Statements</li>
-            <li>Loops</li>
-            <li>Functions</li>
-            <li>Exceptions</li>
-            <li>File/Error Handling</li>
-            <li>Web Scraping</li>
-            <li>Scripting/Automation</li>
-    </ul>
-  </div>
+<section class="course-section">
+  <article class="course-card">
+    <img src="https://picsum.photos/800/400?1" alt="course 1" style="width:100%;height:160px;object-fit:cover;">
+    <div class="course-content" style="padding:12px;color:#ccc;">
+      <h2 style="margin:0 0 8px;color:#fff;font-size:18px;">Course 1</h2>
+      <p style="margin:0;font-size:14px;">Short description here.</p>
+    </div>
+  </article>
 
-  <button class="collapsible">Vegetables</button>
-  <div class="content">
-    <ul>
-      <li>Carrot</li>
-      <li>Potato</li>
-      <li>Onion</li>
-    </ul>
-  </div>
+  <article class="course-card">
+    <img src="https://picsum.photos/800/400?2" alt="course 2" style="width:100%;height:160px;object-fit:cover;">
+    <div class="course-content" style="padding:12px;color:#ccc;">
+      <h2 style="margin:0 0 8px;color:#fff;font-size:18px;">Course 2</h2>
+      <p style="margin:0;font-size:14px;">Short description here.</p>
+    </div>
+  </article>
 
-  <button class="collapsible">Drinks</button>
-  <div class="content">
-    <ul>
-      <li>Water</li>
-      <li>Juice</li>
-      <li>Coffee</li>
-    </ul>
-  </div>
+  <article class="course-card">
+    <img src="https://picsum.photos/800/400?3" alt="course 3" style="width:100%;height:160px;object-fit:cover;">
+    <div class="course-content" style="padding:12px;color:#ccc;">
+      <h2 style="margin:0 0 8px;color:#fff;font-size:18px;">Course 3</h2>
+      <p style="margin:0;font-size:14px;">Short description here.</p>
+    </div>
+  </article>
+</section>
 
-  <script>
-    const buttons = document.querySelectorAll(".collapsible");
-
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        // Close all sections
-        buttons.forEach(b => {
-          if (b !== btn) {
-            b.classList.remove("active");
-            b.nextElementSibling.classList.remove("show");
-          }
-        });
-
-        // Toggle the clicked one
-        btn.classList.toggle("active");
-        btn.nextElementSibling.classList.toggle("show");
-      });
-    });
-  </script>
 </body>
 </html>
