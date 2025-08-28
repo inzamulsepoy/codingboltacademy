@@ -183,8 +183,8 @@ body{
 .footer{
   margin-top:40px; border-top:1px solid #15151c; background:#0a0a0d; padding:20px 0; color:#bdbdd1;
 }
-.mini-links a{color:#bdbdd1; text-decoration:none; margin-left:12px}
-.mini-links a:hover{color:#fff}
+/* .mini-links a{color:#bdbdd1; text-decoration:none; margin-left:12px}
+.mini-links a:hover{color:#fff} */
 
 /* Reveal animation */
 [data-reveal]{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease}
