@@ -1,85 +1,19 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* ---------- Desktop / Default ---------- */
-.course-section {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-  gap: 20px;
-}
-
-.course-card {
-  background: #14080b;
-  width: 300px;               /* desktop default */
-  border-radius: 10px;
-  border: solid #e90b0b 0.2px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(176, 18, 46, 0.3);
-  transition: transform 0.2s ease-in-out;
-}
-
-/* ---------- Mobile: horizontal slider (only when width <=600px) ---------- */
-@media (max-width: 600px) {
-  .course-section {
-    display: flex;
-    flex-wrap: nowrap;               /* prevent wrapping -> horizontal list */
-    overflow-x: auto;                /* enable horizontal scroll */
-    -webkit-overflow-scrolling: touch;/* smooth scrolling on iOS */
-    gap: 16px;
-    padding: 12px;                   /* left/right spacing */
-    scroll-snap-type: x mandatory;   /* enable snapping */
-    scroll-padding-left: 12px;       /* space for first card */
-    justify-content: flex-start;     /* align from left so scrolling works naturally */
-    scroll-behavior: smooth;
-  }
-
-  .course-card {
-    flex: 0 0 85%;        /* card takes ~85% of viewport width */
-    width: 85%;           /* override fixed 300px if present earlier */
-    max-width: 85%;
-    min-width: 220px;     /* prevents cards from getting too small on tiny screens */
-    scroll-snap-align: center; /* card centers when snapped (use 'start' if you prefer) */
-    border-radius: 12px;
-  }
-
-  /* Optional — hide native scrollbar for cleaner UI (works on WebKit) */
-  .course-section::-webkit-scrollbar { height: 8px; }
-  .course-section::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 4px; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt corporis rerum fugiat iure ut eum eveniet omnis
+    porro totam debitis provident nulla eaque veniam, voluptas accusantium enim quos corrupti reprehenderit nobis ipsum
+    mollitia quaerat suscipit voluptates! Quam accusantium voluptate iste!</p>
 
-<section class="course-section">
-  <article class="course-card">
-    <img src="https://picsum.photos/800/400?1" alt="course 1" style="width:100%;height:160px;object-fit:cover;">
-    <div class="course-content" style="padding:12px;color:#ccc;">
-      <h2 style="margin:0 0 8px;color:#fff;font-size:18px;">Course 1</h2>
-      <p style="margin:0;font-size:14px;">Short description here.</p>
-    </div>
-  </article>
-
-  <article class="course-card">
-    <img src="https://picsum.photos/800/400?2" alt="course 2" style="width:100%;height:160px;object-fit:cover;">
-    <div class="course-content" style="padding:12px;color:#ccc;">
-      <h2 style="margin:0 0 8px;color:#fff;font-size:18px;">Course 2</h2>
-      <p style="margin:0;font-size:14px;">Short description here.</p>
-    </div>
-  </article>
-
-  <article class="course-card">
-    <img src="https://picsum.photos/800/400?3" alt="course 3" style="width:100%;height:160px;object-fit:cover;">
-    <div class="course-content" style="padding:12px;color:#ccc;">
-      <h2 style="margin:0 0 8px;color:#fff;font-size:18px;">Course 3</h2>
-      <p style="margin:0;font-size:14px;">Short description here.</p>
-    </div>
-  </article>
-</section>
-
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo iste maiores consequuntur amet corporis laudantium
+    quaerat rem error optio natus?</p>
 </body>
+
 </html>

@@ -2,12 +2,13 @@
 
 /* General Styles */
 body {
-  
+
   font-family: Arial, sans-serif;
   background-color: #0b0b0f;
   color: white;
   margin: 0;
-  padding-top: 60px; /* Adjust based on navbar height */
+  padding-top: 60px;
+  /* Adjust based on navbar height */
 }
 
 /* -------------------------Navbar-------------------------- */
@@ -19,9 +20,11 @@ body {
   background-color: #14080b;
   border-bottom: 1px solid #770505;
   padding: 10px 0;
-  z-index: 1000; /* stays above content */
+  z-index: 1000;
+  /* stays above content */
   box-shadow: 0 4px 15px rgba(176, 18, 46, 0.3);
 }
+
 .nav-container {
   max-width: 1200px;
   margin: auto;
@@ -29,7 +32,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 25px;
-  
+
 }
 
 .nav-logo {
@@ -38,7 +41,7 @@ body {
 
   color: #ffffff;
   font-size: 20px;
-  
+
   text-decoration: none;
 }
 
@@ -98,12 +101,12 @@ body {
     display: flex;
   }
 
-.navbar{
-  padding: 20px 0;
-}
+  .navbar {
+    padding: 20px 0;
+  }
 
   .nav-links {
-    
+
     position: absolute;
     top: 60px;
     right: -100%;
@@ -130,7 +133,7 @@ body {
 header {
   text-align: center;
   padding: 20px;
- 
+
 }
 
 h1 {
@@ -176,7 +179,8 @@ h1 {
 
 /* Card Styles */
 .card {
-  background: #14080b; /* dark with red tint */
+  background: #14080b;
+  /* dark with red tint */
   border: 1px solid #be0909;
   border-radius: 12px;
   padding: 20px;
@@ -373,10 +377,12 @@ h1 {
 .card img {
   width: 100%;
   height: 200px;
-  object-fit: cover; /* keeps proportions, fills space */
+  object-fit: cover;
+  /* keeps proportions, fills space */
   border-radius: 10px;
-  
-  box-shadow: 0 4px 8px rgba(176, 18, 46, 0.3); /* red-tinted shadow */
+
+  box-shadow: 0 4px 8px rgba(176, 18, 46, 0.3);
+  /* red-tinted shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -410,7 +416,8 @@ h1 {
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    gap: 14px;                        /* gap only between cards */
+    gap: 24px;
+    /* gap only between cards */
     padding: 20;
     margin: 20;
     width: 100vw;
@@ -425,11 +432,6 @@ h1 {
     scroll-snap-align: start;
   }
 
-  /* remove extra space on the right edge */
-  .card:last-child {
-    margin-right: 0;
-  }
-
   .card-container::-webkit-scrollbar {
     display: none;
   }
@@ -437,17 +439,18 @@ h1 {
 
 
 /* -----------------------whatsapp------------------------ */
-:root{
+:root {
   --wa-green: #022507;
   --wa-dark: #041a06;
   --wa-white: #fff;
-  --wa-shadow: 0 10px 25px rgba(0,0,0,.25);
+  --wa-shadow: 0 10px 25px rgba(0, 0, 0, .25);
 }
 
 /* Middle-left placement */
-.wa-widget{
+.wa-widget {
   position: fixed;
-  left: -150px; /* start hidden off-screen */
+  left: -150px;
+  /* start hidden off-screen */
   top: 95%;
   transform: translateY(-50%);
   z-index: 9999;
@@ -457,7 +460,7 @@ h1 {
   user-select: none;
   opacity: 0;
   transition: left 0.6s cubic-bezier(0.23, 1, 0.32, 1),
-              opacity 0.4s ease;
+    opacity 0.4s ease;
 }
 
 /* Active state: slide in */
@@ -467,7 +470,7 @@ h1 {
 }
 
 /* WhatsApp button */
-.wa-btn{
+.wa-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -482,17 +485,23 @@ h1 {
   transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
 }
 
-.wa-btn:hover{ transform: translateY(-1px); }
-.wa-btn:active{ transform: translateY(0); filter: brightness(.95); }
+.wa-btn:hover {
+  transform: translateY(-1px);
+}
 
-.wa-icon{
+.wa-btn:active {
+  transform: translateY(0);
+  filter: brightness(.95);
+}
+
+.wa-icon {
   width: 22px;
   height: 22px;
   display: block;
 }
 
 /* subtle attention ripple */
-.wa-ripple{
+.wa-ripple {
   position: absolute;
   inset: 0;
   border-radius: inherit;
@@ -500,14 +509,23 @@ h1 {
   box-shadow: 0 0 0 0 rgba(5, 65, 27, 0.5);
   animation: waPulse 2.2s ease-out infinite;
 }
-@keyframes waPulse{
-  0%{ box-shadow: 0 0 0 0 rgba(8, 167, 66, 0.42); }
-  70%{ box-shadow: 0 0 0 12px rgba(8, 167, 66, 0); }
-  100%{ box-shadow: 0 0 0 0 rgba(7, 168, 66, 0); }
+
+@keyframes waPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(8, 167, 66, 0.42);
+  }
+
+  70% {
+    box-shadow: 0 0 0 12px rgba(8, 167, 66, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(7, 168, 66, 0);
+  }
 }
 
 /* Close (×) badge */
-.wa-close{
+.wa-close {
   position: absolute;
   top: -8px;
   right: -8px;
@@ -524,33 +542,49 @@ h1 {
   box-shadow: var(--wa-shadow);
   transition: transform .15s ease, opacity .15s ease;
 }
-.wa-close:hover{ transform: scale(1.05); }
-.wa-close:active{ transform: scale(.96); }
+
+.wa-close:hover {
+  transform: scale(1.05);
+}
+
+.wa-close:active {
+  transform: scale(.96);
+}
 
 /* Mobile sizing */
-@media (max-width: 480px){
-  .wa-btn{
+@media (max-width: 480px) {
+  .wa-btn {
     padding: 8px 12px;
     font-size: 13px;
     position: fixed;
-  
+
   }
-  .wa-icon{ width: 20px; height: 20px; }
+
+  .wa-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* Hide helper */
-.wa-hidden{ display: none !important; }
+.wa-hidden {
+  display: none !important;
+}
 
 
 /* —— Mobile fix: keep the widget fixed & visible —— */
 @media (max-width: 600px) {
+
   /* Keep the floating container fixed and anchored near the bottom-left */
   .wa-widget {
     position: fixed;
-    left: -200px;            /* start off-screen (for slide-in) */
+    left: -200px;
+    /* start off-screen (for slide-in) */
     bottom: calc(env(safe-area-inset-bottom, 0px) + 18px);
-    top: auto;               /* override desktop top */
-    transform: none;         /* no vertical translate on mobile */
+    top: auto;
+    /* override desktop top */
+    transform: none;
+    /* no vertical translate on mobile */
     z-index: 99999;
     bottom: 30px;
   }
@@ -562,7 +596,8 @@ h1 {
 
   /* Undo the incorrect fixed positioning on the button */
   .wa-btn {
-    position: relative;      /* or 'static' — just not fixed */
+    position: relative;
+    /* or 'static' — just not fixed */
     padding: 8px 12px;
     font-size: 13px;
     touch-action: manipulation;
@@ -575,7 +610,7 @@ h1 {
   }
 }
 
-.wa-custom-icon{
+.wa-custom-icon {
   height: 20px;
   width: 20px;
 }
@@ -586,7 +621,8 @@ h1 {
 
 
 .footer {
-  background-color: #0d0d0d; /* black */
+  background-color: #0d0d0d;
+  /* black */
   color: #fff;
   padding: 40px 20px 20px;
   font-family: Arial, sans-serif;
@@ -607,19 +643,22 @@ h1 {
   margin: 15px;
 }
 
-.footer h2{
+.footer h2 {
   font-family: "Courier Prime", monospace;
-  color: #ffffff; /* dark red */
+  color: #ffffff;
+  /* dark red */
   margin-bottom: 15px;
-  
+
 }
 
 .footer h3 {
-  color: #ec1212; /* dark red */
+  color: #ec1212;
+  /* dark red */
   margin-bottom: 15px;
 }
 
-.footer p, .footer a {
+.footer p,
+.footer a {
   color: #ddd;
   font-size: 14px;
   text-decoration: none;
@@ -627,7 +666,8 @@ h1 {
 }
 
 .footer a:hover {
-  color: #ff3b3b; /* brighter red on hover */
+  color: #ff3b3b;
+  /* brighter red on hover */
 }
 
 .footer ul {
@@ -661,14 +701,15 @@ h1 {
   position: relative;
   margin-top: 100px;
   margin-bottom: 100px;
-  
+
 }
 
 .course-track {
   display: flex;
   width: max-content;
   white-space: nowrap;
-  animation: marquee 40s linear infinite; /* slower speed */
+  animation: marquee 40s linear infinite;
+  /* slower speed */
 }
 
 .course-track span {
@@ -682,6 +723,13 @@ h1 {
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); } /* only half since we duplicate */
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
+  /* only half since we duplicate */
 }
