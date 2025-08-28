@@ -180,9 +180,19 @@ body{
 }
 
 /* Footer */
-.footer{
-  margin-top:40px; border-top:1px solid #15151c; background:#0a0a0d; padding:20px 0; color:#bdbdd1;
+.footer {
+  margin-top: 40px;
+  border-top: 1px solid #15151c;
+  background: #0a0a0d;
+  padding: 10px 0;
+  color: #bdbdd1;
+  text-align: center;   /* center text inside */
+  
 }
+
+
+
+
 /* .mini-links a{color:#bdbdd1; text-decoration:none; margin-left:12px}
 .mini-links a:hover{color:#fff} */
 
